@@ -22,7 +22,7 @@ html[lang=ar] .en,html[lang=en] .ar{display:none}
 section{padding:54px 0}
 h2{font-size:1.7rem;margin:0 0 6px;color:var(--gold);font-weight:800}
 .sub{color:var(--muted);margin:0 0 26px}
-.hero{background:radial-gradient(circle at 50% 30%,#3a2f1c 0,var(--night) 70%);color:#f3ece0;text-align:center;padding:90px 0 70px;position:relative}
+.hero{background:linear-gradient(#14110eb0,#14110ef2),url(images/1.jpg) center/cover var(--night);color:#f3ece0;text-align:center;padding:90px 0 70px;position:relative}
 .hero .mark{font-family:Georgia,'Times New Roman',serif;letter-spacing:.35em;font-size:clamp(2rem,9vw,4rem);color:#e6cf9a;margin:0;padding-inline-start:.35em;text-shadow:0 0 30px #b8923a66}
 .hero h1{font-size:clamp(1.6rem,6vw,2.6rem);margin:6px 0 4px;font-weight:800}
 .hero p{margin:0 auto 28px;max-width:520px;color:#cfc3ae}
@@ -37,13 +37,19 @@ h2{font-size:1.7rem;margin:0 0 6px;color:var(--gold);font-weight:800}
 .card .ic{font-size:1.6rem}
 .card h3{margin:4px 0;font-size:1.05rem}
 .card p{margin:0;color:var(--muted);font-size:.95rem}
-.pool{background:linear-gradient(135deg,#0e4a63,#2b8fb0 60%,#6fc3dc);color:#fff;border-radius:22px;padding:34px 22px;position:relative;overflow:hidden}
+.vid{width:100%;border-radius:18px;background:#000;display:block;max-height:75vh}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0 6px;position:relative;z-index:1}
+.pgrid img,.pgrid video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block}
+.pool{padding-bottom:70px!important;background:linear-gradient(135deg,#0e4a63,#2b8fb0 60%,#6fc3dc);color:#fff;border-radius:22px;padding:34px 22px;position:relative;overflow:hidden}
 .pool h2{color:#fff}
 .pool p{max-width:560px;margin:0 0 14px}
 .pool:after{content:"";position:absolute;inset:auto 0 0 0;height:46px;background:repeating-radial-gradient(circle at 20px 46px,#ffffff30 0 8px,transparent 9px 20px)}
 .tag{display:inline-block;background:#ffffff26;border-radius:999px;padding:3px 14px;margin:3px;font-size:.9rem}
 .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .ph{aspect-ratio:4/3;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;color:#e6cf9a;font-size:.9rem;background:linear-gradient(135deg,#2a2218,#4a3b22);border:1px solid var(--line)}
+.ph{position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+html .ph.has .ar,html .ph.has .en{display:none}
 .ph.w{background:linear-gradient(135deg,#0e4a63,#2b8fb0);color:#fff}
 .q{border-inline-start:3px solid var(--gold)}
 .stars{color:var(--gold)}
@@ -98,23 +104,29 @@ footer{text-align:center;padding:30px 18px 90px;color:var(--muted);border-top:1p
 </div></section>
 
 <section style="padding-top:0"><div class="wrap rv">
+  <h2><span class="ar">شاهد القاعة</span><span class="en">Watch the hall</span></h2>
+  <p class="sub"><span class="ar">جولة سريعة داخل براديس.</span><span class="en">A quick tour of Paradise.</span></p>
+  <video class="vid" controls playsinline preload="none" poster="images/hall-poster.jpg"><source src="videos/hall.mp4" type="video/mp4"></video>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap rv">
   <div class="pool">
     <h2>Paradise Pool</h2>
     <p><span class="ar">حمام سباحة كبير مخصص للتدريب داخل القاعة، لعشّاق السباحة من الصغار والكبار.</span><span class="en">A large training swimming pool at the venue, for swimmers of all ages.</span></p>
     <span class="tag">🏊 <span class="ar">للتدريب</span><span class="en">Training</span></span>
     <span class="tag"><span class="ar">مساحة كبيرة</span><span class="en">Large pool</span></span>
+    <div class="pgrid"><img src="images/3.jpg" alt="Paradise Pool at night" loading="lazy"><video muted loop autoplay playsinline preload="metadata" poster="images/4.jpg"><source src="videos/pool.mp4" type="video/mp4"></video></div>
     <p style="margin-top:14px"><a class="btn gold" id="bookPool" href="#"><span class="ar">استفسر عن التدريب</span><span class="en">Ask about training</span></a></p>
   </div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap rv">
-  <h2><span class="ar">المعرض</span><span class="en">Gallery</span></h2>
-  <p class="sub"><span class="ar">استبدل هذه المربعات بصور القاعة.</span><span class="en">Replace these tiles with the hall's photos.</span></p>
+  <h2 style="margin-bottom:22px"><span class="ar">المعرض</span><span class="en">Gallery</span></h2>
   <div class="gal">
-    <div class="ph"><span class="ar">واجهة القاعة ليلاً</span><span class="en">Facade at night</span></div>
-    <div class="ph"><span class="ar">داخل القاعة</span><span class="en">Inside the hall</span></div>
-    <div class="ph w"><span class="ar">Paradise Pool</span><span class="en">Paradise Pool</span></div>
-    <div class="ph"><span class="ar">فيديو جوي</span><span class="en">Aerial video</span></div>
+    <div class="ph"><img src="images/1.jpg" alt="Paradise Hall facade" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="ar">واجهة القاعة ليلاً</span><span class="en">Facade at night</span></div>
+    <div class="ph"><img src="images/2.jpg" alt="Inside the hall" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="ar">داخل القاعة</span><span class="en">Inside the hall</span></div>
+    <div class="ph w"><img src="images/3.jpg" alt="Paradise Pool" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="ar">Paradise Pool</span><span class="en">Paradise Pool</span></div>
+    <div class="ph"><img src="images/4.jpg" alt="Aerial view" loading="lazy" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="ar">منظر جوي</span><span class="en">Aerial view</span></div>
   </div>
 </div></section>
 
